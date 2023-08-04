@@ -9,7 +9,7 @@ const Greeting = () => {
   useEffect(() => {
     dispatch(getRandomGreeting());
   }, [dispatch]);
-  
+
   return (
     <div className='container'>
       <h3>{greeting}</h3>

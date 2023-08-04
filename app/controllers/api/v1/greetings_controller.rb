@@ -1,6 +1,6 @@
 class Api::V1::GreetingsController < ApplicationController
   def random
-    @greeting = Message.order("RANDOM()").first
-    render json: { greeting: @greeting.content }
+    random_greeting = Greeting.order('RANDOM()').first
+    render json: JSON.pretty_generate({ message: random_greeting.message }), status: :ok
   end
 end
